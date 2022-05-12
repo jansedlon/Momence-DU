@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import dailyRates from "../data/denni_kurz.csv";
+import invariant from "tiny-invariant";
+import { useEffect, useMemo } from "react";
 
 type Props = {
   defaultValue?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  rates: {
+    kód: string;
+  }[];
 };
 
 const StyledSelect = styled.select`
@@ -44,7 +48,25 @@ const StyledSelectContainer = styled.div`
   }
 `;
 
-export function CurrencySelect({ defaultValue, value, onChange }: Props) {
+export function CurrencySelect({
+  defaultValue,
+  value,
+  onChange,
+  rates,
+}: Props) {
+  const codes = useMemo(() => rates.map((rate) => rate["kód"]), []);
+  useEffect(() => {
+    if (defaultValue && defaultValue !== "CZK") {
+      invariant(
+        codes.includes(defaultValue),
+        `Unknown currency code: ${defaultValue}`
+      );
+    }
+    if (value && value !== "CZK") {
+      invariant(codes.includes(value), `Unknown currency code: ${value}`);
+    }
+  }, [codes, defaultValue, value]);
+
   return (
     <StyledSelectContainer>
       <StyledSelect
@@ -52,8 +74,11 @@ export function CurrencySelect({ defaultValue, value, onChange }: Props) {
         value={value}
         onChange={onChange}
       >
-        {dailyRates.map((rate) => (
-          <option key={rate["kód"]}>{rate["kód"]}</option>
+        <option value="CZK">CZK</option>
+        {rates.map((rate) => (
+          <option key={rate["kód"]} value={rate["kód"]}>
+            {rate["kód"]}
+          </option>
         ))}
       </StyledSelect>
     </StyledSelectContainer>

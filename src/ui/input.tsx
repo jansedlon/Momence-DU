@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 import styled from "styled-components";
 
-type Props = ComponentPropsWithoutRef<"input"> & {};
+type Props = ComponentPropsWithoutRef<"input">;
 
 const StyledInput = styled.input`
   font-size: 1.5rem;
