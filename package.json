@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "yarn download-csv && vite",
-    "build": "tsc && vite build",
+    "build": "tsc && yarn download-csv && vite build",
     "preview": "vite preview",
     "download-csv": "sh ./scripts/download-rates.sh"
   },
