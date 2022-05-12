@@ -23,7 +23,8 @@
     }
   },
   "include": [
-    "src"
+    "src",
+    "styled-components.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

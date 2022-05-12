@@ -31,5 +31,6 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "import/extensions": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
+    "react/function-component-definition": "off",
   },
 };
