@@ -24,9 +24,7 @@
   },
   "include": [
     "src",
-    "styled-components.d.ts",
-    "vite.config.ts",
-    "dsv-plugin.ts"
+    "styled-components.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
