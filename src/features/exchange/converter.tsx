@@ -5,6 +5,7 @@ import { Text } from "~/ui/text";
 import { Input } from "~/ui/input";
 import { CurrencySelect } from "~/ui/currency-select";
 import { Card } from "~/ui/card";
+import { ConvertButton } from "~/ui/convert-button";
 
 type Props = {
   rates: {
@@ -48,15 +49,6 @@ export function Converter({ rates }: Props) {
     setGetAmount(+toTargetAmount.toFixed(2));
   };
 
-  const debouncedOnChange = useDebouncedCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const { valueAsNumber: value } = e.target;
-
-      setHaveAmount(value);
-    },
-    500
-  );
-
   const handleFromCurrencyChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setFromCurrency(e.target.value);
   };
@@ -65,19 +57,21 @@ export function Converter({ rates }: Props) {
     setToCurrency(e.target.value);
   };
 
-  useEffect(recalculateRates, [haveAmount, fromCurrency, toCurrency, rates]);
+  const handleHaveAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setHaveAmount(e.target.valueAsNumber);
+  };
 
   return (
-    <Card className="w-full flex">
-      <div className="w-1/2">
+    <Card className="w-full flex justify-between">
+      <div>
         <Text h1 color="primary" size={24}>
           You have
         </Text>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 mt-2">
           <Input
             name="haveAmount"
             defaultValue={haveAmount}
-            onChange={debouncedOnChange}
+            onChange={handleHaveAmountChange}
             type="number"
           />
           <CurrencySelect
@@ -87,11 +81,15 @@ export function Converter({ rates }: Props) {
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <ConvertButton
+        className="self-center"
+        onClick={() => recalculateRates()}
+      />
+      <div>
         <Text h1 color="primary" size={24}>
           You get
         </Text>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 mt-2">
           <Input name="getAmount" value={getAmount} type="number" disabled />
           <CurrencySelect
             value={toCurrency}
