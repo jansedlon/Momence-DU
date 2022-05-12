@@ -24,5 +24,10 @@ module.exports = {
   plugins: ["react", "@typescript-eslint"],
   rules: {
     "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "react/jsx-props-no-spreading": "off",
   },
 };
