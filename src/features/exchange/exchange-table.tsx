@@ -22,8 +22,10 @@ export function ExchangeTable({ rates }: Props) {
           {rates.map((rate) => (
             <Table.Row key={rate.kód}>
               <Table.Cell>{rate.kód}</Table.Cell>
-              <Table.Cell>{rate.množství}</Table.Cell>
-              <Table.Cell>{rate.kurz}</Table.Cell>
+              <Table.Cell>
+                {rate.množství} {rate.kód}
+              </Table.Cell>
+              <Table.Cell>{rate.kurz} CZK</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
