@@ -54,7 +54,7 @@ export function CurrencySelect({
   onChange,
   rates,
 }: Props) {
-  const codes = useMemo(() => rates.map((rate) => rate["kód"]), []);
+  const codes = useMemo(() => rates.map((rate) => rate["kód"]), [rates]);
   useEffect(() => {
     if (defaultValue && defaultValue !== "CZK") {
       invariant(

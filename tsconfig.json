@@ -17,14 +17,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "alwaysStrict": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["*"]
     }
   },
   "include": [
-    "src",
-    "styled-components.d.ts"
+    "src"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
