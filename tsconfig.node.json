@@ -6,5 +6,7 @@
   },
   "include": [
     "vite.config.ts",
-    ".eslintrc.cjs", "./dsv-plugin.ts"]
+    ".eslintrc.cjs",
+    "dsv-plugin.ts"
+  ]
 }

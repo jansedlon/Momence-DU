@@ -14,7 +14,9 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-query": "^3.39.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "tiny-invariant": "^1.2.0",
+    "use-debounce": "^8.0.1"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^4.2.1",
@@ -42,6 +44,7 @@
     "tailwindcss": "^3.0.24",
     "tosource": "^2.0.0-alpha.3",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-tsconfig-paths": "^3.4.1"
   }
 }

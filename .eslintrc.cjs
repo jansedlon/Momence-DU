@@ -29,5 +29,7 @@ module.exports = {
     "react/require-default-props": "off",
     "@typescript-eslint/no-unsafe-return": "off",
     "react/jsx-props-no-spreading": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
   },
 };

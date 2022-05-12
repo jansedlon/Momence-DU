@@ -16,11 +16,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
-  "include": ["src",
-    "./src/data/index.d.ts",
-    "styled-components.d.ts"
+  "include": [
+    "src",
+    "styled-components.d.ts",
+    "vite.config.ts",
+    "dsv-plugin.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
