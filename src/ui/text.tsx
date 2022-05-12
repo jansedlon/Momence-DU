@@ -46,7 +46,6 @@ type Props = DecorationProps & TagProps & CommonProps;
 const StyledText = styled.p<Required<CommonProps> & DecorationProps>`
   color: ${({ color, theme }) => theme.colors[color] ?? color};
   font-size: ${({ size }) => size};
-  font-family: "Inter", sans-serif;
   font-weight: ${({ b }) => (b ? "bold" : "normal")};
   font-style: ${({ i }) => (i ? "italic" : "normal")};
   text-decoration: ${({ u, s }) =>

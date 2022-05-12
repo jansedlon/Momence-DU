@@ -6,7 +6,6 @@ type Props = ComponentPropsWithoutRef<"input">;
 const StyledInput = styled.input`
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: "Inter", sans-serif;
 
   border: 0;
   border-radius: 0;
