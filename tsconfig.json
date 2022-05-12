@@ -18,6 +18,9 @@
     "jsx": "react-jsx",
     "alwaysStrict": true
   },
-  "include": ["src", "./src/data/index.d.ts"],
+  "include": ["src",
+    "./src/data/index.d.ts",
+    "styled-components.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
