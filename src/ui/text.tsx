@@ -44,7 +44,10 @@ type ElementMap = { [key in keyof JSX.IntrinsicElements]?: boolean };
 type Props = DecorationProps & TagProps & CommonProps;
 
 const StyledText = styled.p<Required<CommonProps> & DecorationProps>`
-  color: ${({ color, theme }) => theme.colors[color] ?? color};
+  color: ${({ color, theme }) =>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    theme.colors[color] ?? color};
   font-size: ${({ size }) => size};
   font-weight: ${({ b }) => (b ? "bold" : "normal")};
   font-style: ${({ i }) => (i ? "italic" : "normal")};
