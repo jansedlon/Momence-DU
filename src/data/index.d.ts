@@ -1,5 +1,11 @@
 declare module "*.csv" {
-  const content: Record<string, string | number>[];
+  const content: {
+    země: string;
+    měna: string;
+    množství: number;
+    kód: string;
+    kurz: number;
+  }[];
 
   export default content;
 }
