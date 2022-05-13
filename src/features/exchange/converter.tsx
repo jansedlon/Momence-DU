@@ -64,7 +64,7 @@ export function Converter({ rates }: Props) {
   return (
     <Card className="w-full flex justify-between">
       <div>
-        <Text h1 color="primary" size={24}>
+        <Text p color="primary" size={24}>
           You have
         </Text>
         <div className="flex space-x-2 mt-2">
@@ -86,7 +86,7 @@ export function Converter({ rates }: Props) {
         onClick={() => recalculateRates()}
       />
       <div>
-        <Text h1 color="primary" size={24}>
+        <Text p color="primary" size={24}>
           You get
         </Text>
         <div className="flex space-x-2 mt-2">

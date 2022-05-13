@@ -13,4 +13,4 @@ so I made a custom plugin.
 Sure, there's many ways to get the daily rates data (eg. react-query on every load), but using a static file has the advantage to cache the file to avoid unnecessary network traffic. But yes, it brings up a different issue, which is refreshing the file every day.
 
 ## Text
-The API design might seem strange, but it's inspired by NextUI
+The API design might seem strange, but it's inspired by NextUI which I have been using for a while and I really like the API design decisions they made.
