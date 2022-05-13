@@ -12,7 +12,7 @@ const StyledCard = styled.div`
   border-radius: 10px;
 `;
 
-export function Card<C extends string | React.ComponentType<any>>(
+export function Card<C extends string | React.ComponentType<any> = "div">(
   props: StyledComponentProps<C, DefaultTheme, any, any>
 ) {
   return <StyledCard {...props} />;

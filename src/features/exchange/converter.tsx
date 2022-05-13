@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 import { useDebouncedCallback } from "use-debounce";
 import { Text } from "~/ui/text";
@@ -61,8 +61,18 @@ export function Converter({ rates }: Props) {
     setHaveAmount(e.target.valueAsNumber);
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    recalculateRates();
+  };
+
   return (
-    <Card className="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0">
+    <Card
+      as="form"
+      className="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col w-full lg:w-auto">
         <Text p color="primary" size={24}>
           You have
@@ -82,8 +92,8 @@ export function Converter({ rates }: Props) {
           />
         </div>
       </div>
-      <div className="">
-        <ConvertButton onClick={() => recalculateRates()} />
+      <div>
+        <ConvertButton type="submit" />
       </div>
       <div className="flex flex-col w-full lg:w-auto">
         <Text p color="primary" size={24}>
