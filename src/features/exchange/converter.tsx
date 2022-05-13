@@ -62,8 +62,8 @@ export function Converter({ rates }: Props) {
   };
 
   return (
-    <Card className="w-full flex justify-between">
-      <div>
+    <Card className="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0">
+      <div className="flex flex-col w-full lg:w-auto">
         <Text p color="primary" size={24}>
           You have
         </Text>
@@ -73,6 +73,7 @@ export function Converter({ rates }: Props) {
             defaultValue={haveAmount}
             onChange={handleHaveAmountChange}
             type="number"
+            className="w-full lg:w-auto"
           />
           <CurrencySelect
             value={fromCurrency}
@@ -81,16 +82,21 @@ export function Converter({ rates }: Props) {
           />
         </div>
       </div>
-      <ConvertButton
-        className="self-center"
-        onClick={() => recalculateRates()}
-      />
-      <div>
+      <div className="">
+        <ConvertButton onClick={() => recalculateRates()} />
+      </div>
+      <div className="flex flex-col w-full lg:w-auto">
         <Text p color="primary" size={24}>
           You get
         </Text>
         <div className="flex space-x-2 mt-2">
-          <Input name="getAmount" value={getAmount} type="number" disabled />
+          <Input
+            name="getAmount"
+            value={getAmount}
+            type="number"
+            disabled
+            className="w-full lg:w-auto"
+          />
           <CurrencySelect
             value={toCurrency}
             onChange={handleToCurrencyChange}

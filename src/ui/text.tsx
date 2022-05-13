@@ -1,5 +1,5 @@
 import { forwardRef, PropsWithChildren, useMemo } from "react";
-import styled from "styled-components";
+import styled, { DefaultTheme, StyledComponentProps } from "styled-components";
 
 type DecorationProps = {
   // Bold
@@ -41,7 +41,10 @@ type CommonProps = {
 
 type ElementMap = { [key in keyof JSX.IntrinsicElements]?: boolean };
 
-type Props = DecorationProps & TagProps & CommonProps;
+type Props = StyledComponentProps<AllowedElements, any, any, any> &
+  DecorationProps &
+  TagProps &
+  CommonProps;
 
 const StyledText = styled.p<Required<CommonProps> & DecorationProps>`
   color: ${({ color, theme }) =>

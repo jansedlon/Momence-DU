@@ -6,6 +6,7 @@ type Props = ComponentPropsWithoutRef<"input">;
 const StyledInput = styled.input`
   font-size: 1.5rem;
   font-weight: bold;
+  width: 100%;
 
   border: 0;
   border-radius: 0;
@@ -46,8 +47,8 @@ const StyledInputContainer = styled.div`
 `;
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ ...otherProps }, ref) => (
-    <StyledInputContainer>
+  ({ className, ...otherProps }, ref) => (
+    <StyledInputContainer className={className}>
       <StyledInput ref={ref} {...otherProps} />
     </StyledInputContainer>
   )
